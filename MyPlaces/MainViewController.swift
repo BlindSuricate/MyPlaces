@@ -78,14 +78,14 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
-        let place = places[indexPath.row]
-        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { (_, _) in
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let DeleteAction = UIContextualAction(style: .destructive, title: "Delete", handler: { (action, view, success) in
+            let place = self.places[indexPath.row]
             StorageManager.deleteObject(place)
             tableView.deleteRows(at: [indexPath], with: .automatic)
-        }
-        return [deleteAction]
+        })
+        DeleteAction.backgroundColor = .red
+        return UISwipeActionsConfiguration(actions: [DeleteAction])
     }
     
   
