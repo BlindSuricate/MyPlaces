@@ -193,7 +193,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vEX-J6-AFG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="8MS-aC-UNc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2191" y="383"/>
+            <point key="canvasLocation" x="2189.8550724637685" y="382.36607142857139"/>
         </scene>
         <!--My Places-->
         <scene sceneID="hma-aU-SsM">
@@ -222,7 +222,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="1F8-8f-IgC">
-                                                    <rect key="frame" x="97" y="8" width="301" height="69"/>
+                                                    <rect key="frame" x="97" y="8" width="211" height="69"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Cw-7J-4vS">
                                                             <rect key="frame" x="0.0" y="0.0" width="44" height="24.5"/>
@@ -244,18 +244,47 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="90" placeholderIntrinsicHeight="14" translatesAutoresizingMaskIntoConstraints="NO" id="uKP-el-GPM" customClass="CosmosView" customModule="Cosmos">
+                                                    <rect key="frame" x="316" y="35.5" width="90" height="14"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90" id="gf4-rs-MZi"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                            <real key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                            <real key="value" value="14"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="filledStar"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="emptyStar"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="1F8-8f-IgC" firstAttribute="leading" secondItem="049-cd-xgH" secondAttribute="trailing" constant="16" id="Msc-d7-zxG"/>
                                                 <constraint firstItem="049-cd-xgH" firstAttribute="leading" secondItem="l2v-PK-a2Y" secondAttribute="leading" constant="16" id="Ug5-wS-Yg0"/>
+                                                <constraint firstItem="uKP-el-GPM" firstAttribute="leading" secondItem="1F8-8f-IgC" secondAttribute="trailing" constant="8" id="VG3-sf-Aq3"/>
                                                 <constraint firstItem="049-cd-xgH" firstAttribute="centerY" secondItem="l2v-PK-a2Y" secondAttribute="centerY" id="ZJT-4g-2cm"/>
+                                                <constraint firstAttribute="trailing" secondItem="uKP-el-GPM" secondAttribute="trailing" constant="8" id="d4p-7q-7Iy"/>
                                                 <constraint firstItem="1F8-8f-IgC" firstAttribute="top" secondItem="l2v-PK-a2Y" secondAttribute="top" constant="8" id="l2q-V2-8NL"/>
+                                                <constraint firstItem="uKP-el-GPM" firstAttribute="centerY" secondItem="l2v-PK-a2Y" secondAttribute="centerY" id="mTa-iJ-Ppw"/>
                                                 <constraint firstAttribute="bottom" secondItem="1F8-8f-IgC" secondAttribute="bottom" constant="8" id="s6N-Be-oOL"/>
                                                 <constraint firstAttribute="trailing" secondItem="1F8-8f-IgC" secondAttribute="trailing" constant="16" id="tk9-PC-kds"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="tk9-PC-kds"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         <connections>
+                                            <outlet property="cosmosView" destination="uKP-el-GPM" id="wep-d1-DIM"/>
                                             <outlet property="imageOfPlace" destination="049-cd-xgH" id="xRi-08-IKt"/>
                                             <outlet property="locationLabel" destination="P2l-gq-Il0" id="3au-wz-gu3"/>
                                             <outlet property="nameLabel" destination="0Cw-7J-4vS" id="drB-pf-EHg"/>
@@ -312,7 +341,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WK9-xn-W9Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1093.5999999999999" y="381.85907046476763"/>
+            <point key="canvasLocation" x="1092.753623188406" y="381.69642857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jse-Mb-E5D">
@@ -355,6 +384,8 @@
     <resources>
         <image name="AZ" width="25" height="24"/>
         <image name="Photo" width="195" height="196"/>
+        <image name="emptyStar" width="255" height="256"/>
+        <image name="filledStar" width="237.5" height="238"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="FTK-vh-poE"/>

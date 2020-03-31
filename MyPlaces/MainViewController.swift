@@ -53,35 +53,21 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if isFiltering {
             return filtredPlaces.count
         }
-        return places.isEmpty ? 0 : places.count
+        return places.count
     }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
         
-        var place = Place()
-        if isFiltering {
-            place = filtredPlaces[indexPath.row]
-        } else {
-            place = places[indexPath.row]
-        }
+        let place = isFiltering ? filtredPlaces[indexPath.row] : places[indexPath.row]
         
-
         // настройка ячейки таблицы
         cell.nameLabel?.text = place.name
         cell.locationLabel.text = place.location
         cell.typeLabel.text = place.type
-
         cell.imageOfPlace.image = UIImage(data: place.imageData!)
-
-        // округление изображения
-        cell.imageOfPlace?.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
-        cell.imageOfPlace?.clipsToBounds = true
-
-
-
-
+        cell.cosmosView.rating = place.rating
         return cell
     }
     
@@ -109,12 +95,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         if segue.identifier == "showDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            let place: Place
-            if isFiltering {
-                place = filtredPlaces[indexPath.row]
-            } else {
-                place = places[indexPath.row]
-            }
+            
+            let place = isFiltering ? filtredPlaces[indexPath.row] : places[indexPath.row]
+
             let newPlaceVC = segue.destination as! NewPlaceViewController
             newPlaceVC.currentPlace = place
         }
