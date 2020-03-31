@@ -276,7 +276,7 @@
                                                         <constraint firstAttribute="height" constant="65" id="Y8a-ip-Vpa"/>
                                                     </constraints>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="1F8-8f-IgC">
+                                                <stackView opaque="NO" contentMode="scaleAspectFill" placeholderIntrinsicWidth="211" placeholderIntrinsicHeight="69" axis="vertical" distribution="fillProportionally" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="1F8-8f-IgC">
                                                     <rect key="frame" x="97" y="8" width="211" height="69"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Cw-7J-4vS">
