@@ -15,20 +15,44 @@ class MapViewController: UIViewController {
     var place = Place()
     let annotationIdentifire = "annotationIdentifire"
     let locationManager = CLLocationManager()
+    let regionInMeters = 10_000.00
+    var incomeSegueIdentifire = ""
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapPinImage: UIImageView!
+    @IBOutlet weak var adressLabel: UILabel!
+    @IBOutlet weak var doneButton: UIButton!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
-        setupPlacemark()
+        setupMapView()
         checkLocationServices()
         
     }
     
+    @IBAction func centerViewOnUserLocation() {
+        showUserLocation()
+    }
+    
+    @IBAction func doneButtonPressed(_ sender: UIButton) {
+    }
+    
+    
     @IBAction func closeVC() {
         
         dismiss(animated: true)
+    }
+    
+    private func setupMapView() {
+        if incomeSegueIdentifire == "showPlace" {
+            setupPlacemark()
+            mapPinImage.isHidden = true
+            adressLabel.isHidden = true
+            doneButton.isHidden = true
+        }
     }
     
     
@@ -58,6 +82,15 @@ class MapViewController: UIViewController {
             
         }
     }
+    
+    private func showUserLocation() {
+        if let location = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion(center: location,
+                                            latitudinalMeters: regionInMeters,
+                                            longitudinalMeters: regionInMeters)
+            mapView.setRegion(region, animated: true)
+        }
+    }
  
     private func checkLocationServices() {
         
@@ -66,6 +99,7 @@ class MapViewController: UIViewController {
             checkLocationAuthorization()
         } else {
             // To Do Alert with instructions
+            setupActionSheet()
         }
     }
     
@@ -74,13 +108,26 @@ class MapViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
+    func setupActionSheet() {
+        let actionSheet = UIAlertController(title: "Доступ к геоданным",
+                                            message: "Чтобы продолжить, разрешите доступ к вашей геолокации в настройках приложения",
+                                            preferredStyle: .actionSheet)
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        actionSheet.addAction(cancel)
+        present(actionSheet, animated: true)
+        
+    }
+    
     private func checkLocationAuthorization() {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse :
             mapView.showsUserLocation = true
+            if incomeSegueIdentifire == "getAdress" { showUserLocation() }
             break
         case .denied:
             // To Do Alert!
+            setupActionSheet()
             break
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
