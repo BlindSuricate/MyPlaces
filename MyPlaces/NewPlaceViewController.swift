@@ -9,7 +9,7 @@
 import UIKit
 
 class NewPlaceViewController: UITableViewController {
-
+    
     var imageIsChanged = false
     var currentPlace: Place!
     
@@ -32,7 +32,7 @@ class NewPlaceViewController: UITableViewController {
         setupEditScreen()
     }
     
-  // MARK: Table View Delegate
+    // MARK: Table View Delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let cameraIcon = #imageLiteral(resourceName: "camera")
@@ -76,6 +76,7 @@ class NewPlaceViewController: UITableViewController {
         guard let identifier = segue.identifier, let mapVC = segue.destination as? MapViewController else  { return}
         
         mapVC.incomeSegueIdentifire = identifier
+        mapVC.mapViewControllerDelegate = self
         
         if identifier == "showPlace" {
             mapVC.place.name = placeName.text!
@@ -83,18 +84,13 @@ class NewPlaceViewController: UITableViewController {
             mapVC.place.type = placeType.text
             mapVC.place.imageData = placeImage.image?.pngData()
         }
-
     }
     
     
     
     func savePlace() {
-        
-
         let image = imageIsChanged ? placeImage.image : #imageLiteral(resourceName: "imagePlaceholder")
-        
         let imageData = image?.pngData()
-        
         let newPlace = Place(name: placeName.text!,
                              type: placeType.text,
                              location: placeLocation.text,
@@ -112,14 +108,10 @@ class NewPlaceViewController: UITableViewController {
         } else {
             StorageManager.saveObject(newPlace)
         }
-        
-        
-
-        
- }
+    }
     
     
-   private func setupEditScreen() {
+    private func setupEditScreen() {
         if currentPlace != nil {
             setupNavigationBar()
             imageIsChanged = true
@@ -142,12 +134,10 @@ class NewPlaceViewController: UITableViewController {
         saveButton.isEnabled = true
         
     }
-
+    
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
     }
-    
-    
 }
 
 
@@ -155,7 +145,7 @@ class NewPlaceViewController: UITableViewController {
 
 extension NewPlaceViewController: UITextFieldDelegate {
     
-//Скрываем клавиатуру по нажатию на Done
+    //Скрываем клавиатуру по нажатию на Done
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -171,7 +161,7 @@ extension NewPlaceViewController: UITextFieldDelegate {
     }
 }
 
-// MARK : Work with Image
+// MARK: Work with Image
 
 extension NewPlaceViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -192,5 +182,13 @@ extension NewPlaceViewController: UIImagePickerControllerDelegate, UINavigationC
         placeImage.clipsToBounds = true
         imageIsChanged = true
         dismiss(animated: true)
+    }
+}
+
+
+// MARK: MapViewControllerDelegate
+extension NewPlaceViewController: MapViewControllerDelegate {
+    func getAddress(_ address: String?) {
+        placeLocation.text = address
     }
 }

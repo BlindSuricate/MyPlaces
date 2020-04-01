@@ -119,9 +119,9 @@
                                                         <constraint firstAttribute="width" constant="22" id="0vF-Qn-m1u"/>
                                                         <constraint firstAttribute="height" constant="22" id="IfL-nz-rPE"/>
                                                     </constraints>
-                                                    <state key="normal" image="paperplane" catalog="system"/>
+                                                    <state key="normal" image="Placeholder"/>
                                                     <connections>
-                                                        <segue destination="e32-vH-Vvl" kind="presentation" identifier="getAdress" id="hWh-Rh-cuC"/>
+                                                        <segue destination="e32-vH-Vvl" kind="presentation" identifier="getAddress" id="hWh-Rh-cuC"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -248,23 +248,21 @@
                                     <action selector="closeVC" destination="e32-vH-Vvl" eventType="touchUpInside" id="VEq-bB-ED8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCO-jT-ZLx">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCO-jT-ZLx">
                                 <rect key="frame" x="344" y="648" width="30" height="30"/>
-                                <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="bH0-En-eWA"/>
                                     <constraint firstAttribute="width" constant="30" id="hiD-b7-RMp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
-                                <state key="normal" title="O">
+                                <state key="normal" image="Placeholder">
                                     <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="centerViewOnUserLocation" destination="e32-vH-Vvl" eventType="touchUpInside" id="2yJ-Od-sBH"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.and.ellipse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3we-Jz-oee">
-                                <rect key="frame" x="187" y="380.5" width="40" height="40.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pin" translatesAutoresizingMaskIntoConstraints="NO" id="3we-Jz-oee">
+                                <rect key="frame" x="187" y="381" width="40" height="40"/>
                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="aHN-vG-fhL"/>
@@ -309,7 +307,7 @@
                         <viewLayoutGuide key="safeArea" id="Xcz-Kq-8aw"/>
                     </view>
                     <connections>
-                        <outlet property="adressLabel" destination="Knn-IT-Vzo" id="Qyh-jt-BBY"/>
+                        <outlet property="addressLabel" destination="Knn-IT-Vzo" id="Qyh-jt-BBY"/>
                         <outlet property="doneButton" destination="1Dg-ED-Ily" id="ncg-Vs-r4y"/>
                         <outlet property="mapPinImage" destination="3we-Jz-oee" id="wW4-AX-MRU"/>
                         <outlet property="mapView" destination="Te2-55-P8y" id="Akc-EL-rmN"/>
@@ -508,15 +506,15 @@
     <resources>
         <image name="AZ" width="25" height="24"/>
         <image name="Photo" width="195" height="196"/>
+        <image name="Pin" width="42" height="42"/>
+        <image name="Placeholder" width="22" height="22"/>
         <image name="camcel" width="128" height="128"/>
         <image name="emptyStar" width="255" height="256"/>
         <image name="filledStar" width="237.5" height="238"/>
         <image name="map" width="50" height="50"/>
-        <image name="mappin.and.ellipse" catalog="system" width="58" height="64"/>
-        <image name="paperplane" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jmn-Au-LP1"/>
+        <segue reference="hWh-Rh-cuC"/>
         <segue reference="FTK-vh-poE"/>
     </inferredMetricsTieBreakers>
 </document>
