@@ -10,6 +10,7 @@
 		2074FB565EED5BA266149CE9 /* Pods_MyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3B2B377AC52043B309089D /* Pods_MyPlaces.framework */; };
 		CE243D5D2430C420009EDB0B /* RatingControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE243D5C2430C420009EDB0B /* RatingControll.swift */; };
 		CE2A4C2E242E39F2006179DD /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A4C2D242E39F2006179DD /* StorageManager.swift */; };
+		CE5494A2243618B900140860 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5494A1243618B900140860 /* MapManager.swift */; };
 		CE9EF4F2243396FA00378137 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9EF4F1243396FA00378137 /* MapViewController.swift */; };
 		CEA1CDE424257EA0007B19E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA1CDE324257EA0007B19E0 /* AppDelegate.swift */; };
 		CEA1CDE624257EA0007B19E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA1CDE524257EA0007B19E0 /* SceneDelegate.swift */; };
@@ -27,6 +28,7 @@
 		6CD91F0D70C6AF22DCB19E61 /* Pods-MyPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.release.xcconfig"; path = "Target Support Files/Pods-MyPlaces/Pods-MyPlaces.release.xcconfig"; sourceTree = "<group>"; };
 		CE243D5C2430C420009EDB0B /* RatingControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControll.swift; sourceTree = "<group>"; };
 		CE2A4C2D242E39F2006179DD /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		CE5494A1243618B900140860 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		CE9EF4F1243396FA00378137 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CEA1CDE024257EA0007B19E0 /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA1CDE324257EA0007B19E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,55 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CE5494A32436315300140860 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CEA1CDF72425866E007B19E0 /* MainViewController.swift */,
+				CEA1CDFD242A6426007B19E0 /* NewPlaceViewController.swift */,
+				CE9EF4F1243396FA00378137 /* MapViewController.swift */,
+				CEA1CDF924262E0F007B19E0 /* CustomTableViewCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CE5494A42436317500140860 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEA1CDFB242A4B45007B19E0 /* PlaceModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE5494A52436318200140860 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CE5494A1243618B900140860 /* MapManager.swift */,
+				CE2A4C2D242E39F2006179DD /* StorageManager.swift */,
+				CE243D5C2430C420009EDB0B /* RatingControll.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CE5494A62436319600140860 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CEA1CDF124257EA9007B19E0 /* Info.plist */,
+				CEA1CDE324257EA0007B19E0 /* AppDelegate.swift */,
+				CEA1CDE524257EA0007B19E0 /* SceneDelegate.swift */,
+				CEA1CDEC24257EA9007B19E0 /* Assets.xcassets */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		CE5494A7243631B200140860 /* IBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				CEA1CDEE24257EA9007B19E0 /* LaunchScreen.storyboard */,
+				CEA1CDE924257EA0007B19E0 /* Main.storyboard */,
+			);
+			path = IBuilder;
+			sourceTree = "<group>";
+		};
 		CEA1CDD724257EA0007B19E0 = {
 			isa = PBXGroup;
 			children = (
@@ -83,19 +134,11 @@
 		CEA1CDE224257EA0007B19E0 /* MyPlaces */ = {
 			isa = PBXGroup;
 			children = (
-				CEA1CDE324257EA0007B19E0 /* AppDelegate.swift */,
-				CE9EF4F1243396FA00378137 /* MapViewController.swift */,
-				CEA1CDE524257EA0007B19E0 /* SceneDelegate.swift */,
-				CEA1CDF72425866E007B19E0 /* MainViewController.swift */,
-				CE243D5C2430C420009EDB0B /* RatingControll.swift */,
-				CEA1CDFD242A6426007B19E0 /* NewPlaceViewController.swift */,
-				CEA1CDFB242A4B45007B19E0 /* PlaceModel.swift */,
-				CE2A4C2D242E39F2006179DD /* StorageManager.swift */,
-				CEA1CDF924262E0F007B19E0 /* CustomTableViewCell.swift */,
-				CEA1CDE924257EA0007B19E0 /* Main.storyboard */,
-				CEA1CDEC24257EA9007B19E0 /* Assets.xcassets */,
-				CEA1CDEE24257EA9007B19E0 /* LaunchScreen.storyboard */,
-				CEA1CDF124257EA9007B19E0 /* Info.plist */,
+				CE5494A32436315300140860 /* ViewControllers */,
+				CE5494A52436318200140860 /* Helpers */,
+				CE5494A42436317500140860 /* Models */,
+				CE5494A62436319600140860 /* Support Files */,
+				CE5494A7243631B200140860 /* IBuilder */,
 			);
 			path = MyPlaces;
 			sourceTree = "<group>";
@@ -230,6 +273,7 @@
 				CEA1CDE424257EA0007B19E0 /* AppDelegate.swift in Sources */,
 				CE9EF4F2243396FA00378137 /* MapViewController.swift in Sources */,
 				CE2A4C2E242E39F2006179DD /* StorageManager.swift in Sources */,
+				CE5494A2243618B900140860 /* MapManager.swift in Sources */,
 				CEA1CDFC242A4B45007B19E0 /* PlaceModel.swift in Sources */,
 				CEA1CDFA24262E0F007B19E0 /* CustomTableViewCell.swift in Sources */,
 				CEA1CDE624257EA0007B19E0 /* SceneDelegate.swift in Sources */,
@@ -379,7 +423,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9K7WCDXH6U;
-				INFOPLIST_FILE = MyPlaces/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MyPlaces/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -398,7 +442,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9K7WCDXH6U;
-				INFOPLIST_FILE = MyPlaces/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MyPlaces/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
