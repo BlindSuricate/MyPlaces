@@ -285,17 +285,30 @@
                                     <action selector="doneButtonPressed:" destination="e32-vH-Vvl" eventType="touchUpInside" id="8Dv-q1-O6U"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ou8-dS-hbj">
+                                <rect key="frame" x="182" y="718" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6fh-6M-qwS"/>
+                                    <constraint firstAttribute="width" constant="50" id="Yxi-xy-Bwz"/>
+                                </constraints>
+                                <state key="normal" image="GetDirection"/>
+                                <connections>
+                                    <action selector="goButtonPressed" destination="e32-vH-Vvl" eventType="touchUpInside" id="7IV-EQ-uG0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Xcz-Kq-8aw" firstAttribute="bottom" secondItem="iCO-jT-ZLx" secondAttribute="bottom" constant="130" id="0bb-vo-P25"/>
                             <constraint firstItem="Xcz-Kq-8aw" firstAttribute="trailing" secondItem="CFn-g5-aQ3" secondAttribute="trailing" constant="40" id="AiO-ZX-dox"/>
                             <constraint firstItem="Knn-IT-Vzo" firstAttribute="leading" secondItem="Xcz-Kq-8aw" secondAttribute="leading" constant="16" id="C5z-lj-S0y"/>
+                            <constraint firstItem="Xcz-Kq-8aw" firstAttribute="bottom" secondItem="Ou8-dS-hbj" secondAttribute="bottom" constant="40" id="FEa-nP-XG5"/>
                             <constraint firstItem="Te2-55-P8y" firstAttribute="trailing" secondItem="Xcz-Kq-8aw" secondAttribute="trailing" id="Gwj-No-DN8"/>
                             <constraint firstItem="Xcz-Kq-8aw" firstAttribute="bottom" secondItem="1Dg-ED-Ily" secondAttribute="bottom" constant="40" id="K0a-0O-VEc"/>
                             <constraint firstItem="3we-Jz-oee" firstAttribute="centerY" secondItem="5XQ-Rr-NGk" secondAttribute="centerY" constant="-20" id="MHo-l4-7Xs"/>
                             <constraint firstItem="CFn-g5-aQ3" firstAttribute="top" secondItem="Xcz-Kq-8aw" secondAttribute="top" constant="40" id="S1J-bi-Xth"/>
                             <constraint firstItem="Xcz-Kq-8aw" firstAttribute="trailing" secondItem="iCO-jT-ZLx" secondAttribute="trailing" constant="40" id="cPn-Pz-Rdc"/>
+                            <constraint firstItem="Ou8-dS-hbj" firstAttribute="centerX" secondItem="5XQ-Rr-NGk" secondAttribute="centerX" id="eiR-3d-ZPi"/>
                             <constraint firstItem="Te2-55-P8y" firstAttribute="leading" secondItem="Xcz-Kq-8aw" secondAttribute="leading" id="lB3-dU-lK6"/>
                             <constraint firstItem="Xcz-Kq-8aw" firstAttribute="trailing" secondItem="Knn-IT-Vzo" secondAttribute="trailing" constant="16" id="nRL-bb-Sqh"/>
                             <constraint firstItem="3we-Jz-oee" firstAttribute="centerX" secondItem="5XQ-Rr-NGk" secondAttribute="centerX" id="pGL-hq-M4n"/>
@@ -309,6 +322,7 @@
                     <connections>
                         <outlet property="addressLabel" destination="Knn-IT-Vzo" id="Qyh-jt-BBY"/>
                         <outlet property="doneButton" destination="1Dg-ED-Ily" id="ncg-Vs-r4y"/>
+                        <outlet property="goButton" destination="Ou8-dS-hbj" id="ZLt-kL-QGZ"/>
                         <outlet property="mapPinImage" destination="3we-Jz-oee" id="wW4-AX-MRU"/>
                         <outlet property="mapView" destination="Te2-55-P8y" id="Akc-EL-rmN"/>
                     </connections>
@@ -505,6 +519,7 @@
     </scenes>
     <resources>
         <image name="AZ" width="25" height="24"/>
+        <image name="GetDirection" width="50" height="50"/>
         <image name="Photo" width="195" height="196"/>
         <image name="Pin" width="42" height="42"/>
         <image name="Placeholder" width="22" height="22"/>
